@@ -1,0 +1,7 @@
+{
+  "name": "AshtaSiddhantaSaram",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
