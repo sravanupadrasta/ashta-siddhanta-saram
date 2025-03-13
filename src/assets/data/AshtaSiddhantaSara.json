@@ -1,0 +1,1472 @@
+[
+   {
+      "StartTime":"06:00:00",
+      "EndTime":"06:24:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Journey will be fruitful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:00:00",
+      "EndTime":"06:24:00",
+      "DayOfWeek":"Monday",
+      "Result":"Hurdles to the work",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"06:00:00",
+      "EndTime":"06:24:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Monitory gains ",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:00:00",
+      "EndTime":"06:24:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Bad News",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"06:00:00",
+      "EndTime":"06:24:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Monitory gains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:00:00",
+      "EndTime":"06:24:00",
+      "DayOfWeek":"Friday",
+      "Result":"Proposal will be fruitful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:00:00",
+      "EndTime":"06:24:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Hurdles in the proposal",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"06:24:00",
+      "EndTime":"06:48:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Good Time for Education",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:24:00",
+      "EndTime":"06:48:00",
+      "DayOfWeek":"Monday",
+      "Result":"Will be honored",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:24:00",
+      "EndTime":"06:48:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Good for Journey",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:24:00",
+      "EndTime":"06:48:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Feels bad",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"06:24:00",
+      "EndTime":"06:48:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Things will be fruitful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:24:00",
+      "EndTime":"06:48:00",
+      "DayOfWeek":"Friday",
+      "Result":"Work will not be completed",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"06:24:00",
+      "EndTime":"06:48:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Safe",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:48:00",
+      "EndTime":"07:12:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Difficulty in Job",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"06:48:00",
+      "EndTime":"07:12:00",
+      "DayOfWeek":"Monday",
+      "Result":"Vehicle comfort",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:48:00",
+      "EndTime":"07:12:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Sadness",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"06:48:00",
+      "EndTime":"07:12:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Monitory Gains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:48:00",
+      "EndTime":"07:12:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Illness",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"06:48:00",
+      "EndTime":"07:12:00",
+      "DayOfWeek":"Friday",
+      "Result":"Monitory gain",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"06:48:00",
+      "EndTime":"07:12:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Good for Marriage",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"07:12:00",
+      "EndTime":"07:36:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Enemies may develop",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"07:12:00",
+      "EndTime":"07:36:00",
+      "DayOfWeek":"Monday",
+      "Result":"Comforts for ladies",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"07:12:00",
+      "EndTime":"07:36:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Fear from Ghosts",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"07:12:00",
+      "EndTime":"07:36:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Fruitful proposal",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"07:12:00",
+      "EndTime":"07:36:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Vehicle Comforts",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"07:12:00",
+      "EndTime":"07:36:00",
+      "DayOfWeek":"Friday",
+      "Result":"Favorable authorities",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"07:12:00",
+      "EndTime":"07:36:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Friendship",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"07:36:00",
+      "EndTime":"08:00:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Fear of Thieves",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"07:36:00",
+      "EndTime":"08:00:00",
+      "DayOfWeek":"Monday",
+      "Result":"Gains on Land",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"07:36:00",
+      "EndTime":"08:00:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Vehicle comfort",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"07:36:00",
+      "EndTime":"08:00:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Hurdles in the work",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"07:36:00",
+      "EndTime":"08:00:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Good for Marriage",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"07:36:00",
+      "EndTime":"08:00:00",
+      "DayOfWeek":"Friday",
+      "Result":"Defeat",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"07:36:00",
+      "EndTime":"08:00:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Journey will be fruitful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:00:00",
+      "EndTime":"08:24:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Sadness",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"08:00:00",
+      "EndTime":"08:24:00",
+      "DayOfWeek":"Monday",
+      "Result":"Transfers",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:00:00",
+      "EndTime":"08:24:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Helping nature",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:00:00",
+      "EndTime":"08:24:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Great fear",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"08:00:00",
+      "EndTime":"08:24:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Loss of comfort",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"08:00:00",
+      "EndTime":"08:24:00",
+      "DayOfWeek":"Friday",
+      "Result":"Successful work",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:00:00",
+      "EndTime":"08:24:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Vehicle comfort",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:24:00",
+      "EndTime":"08:48:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Proposal will be fruitful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:24:00",
+      "EndTime":"08:48:00",
+      "DayOfWeek":"Monday",
+      "Result":"Secret monitory gains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:24:00",
+      "EndTime":"08:48:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"May buy new dresses",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:24:00",
+      "EndTime":"08:48:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Fickle mind",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"08:24:00",
+      "EndTime":"08:48:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Success in job",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:24:00",
+      "EndTime":"08:48:00",
+      "DayOfWeek":"Friday",
+      "Result":"Sad or Fear",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"08:24:00",
+      "EndTime":"08:48:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Work will be successful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:48:00",
+      "EndTime":"09:12:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Safety - gains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:48:00",
+      "EndTime":"09:12:00",
+      "DayOfWeek":"Monday",
+      "Result":"Success in case",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:48:00",
+      "EndTime":"09:12:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Loss in Journey",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"08:48:00",
+      "EndTime":"09:12:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Problems",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"08:48:00",
+      "EndTime":"09:12:00",
+      "DayOfWeek":"Thursday",
+      "Result":"May go to temple",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:48:00",
+      "EndTime":"09:12:00",
+      "DayOfWeek":"Friday",
+      "Result":"Brave or Confident",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"08:48:00",
+      "EndTime":"09:12:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Honored in Office",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"09:12:00",
+      "EndTime":"09:36:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Good for marriage",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"09:12:00",
+      "EndTime":"09:36:00",
+      "DayOfWeek":"Monday",
+      "Result":"Job",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"09:12:00",
+      "EndTime":"09:36:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"No controversy",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"09:12:00",
+      "EndTime":"09:36:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Successful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"09:12:00",
+      "EndTime":"09:36:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Hurdles in Journey",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"09:12:00",
+      "EndTime":"09:36:00",
+      "DayOfWeek":"Friday",
+      "Result":"Difficulty & Loss",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"09:12:00",
+      "EndTime":"09:36:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Losses in the proposed work",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"09:36:00",
+      "EndTime":"10:00:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Wide friends circle",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"09:36:00",
+      "EndTime":"10:00:00",
+      "DayOfWeek":"Monday",
+      "Result":"Feast",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"09:36:00",
+      "EndTime":"10:00:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Trouble from enemies",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"09:36:00",
+      "EndTime":"10:00:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Break in journey",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"09:36:00",
+      "EndTime":"10:00:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Proposal will be fruitful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"09:36:00",
+      "EndTime":"10:00:00",
+      "DayOfWeek":"Friday",
+      "Result":"Safety",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"09:36:00",
+      "EndTime":"10:00:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Difficulties in Journey",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"10:00:00",
+      "EndTime":"10:24:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Life threat",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"10:00:00",
+      "EndTime":"10:24:00",
+      "DayOfWeek":"Monday",
+      "Result":"Gains through lady",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:00:00",
+      "EndTime":"10:24:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Gains through lady",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:00:00",
+      "EndTime":"10:24:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Honored by officials",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:00:00",
+      "EndTime":"10:24:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Success in trade",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:00:00",
+      "EndTime":"10:24:00",
+      "DayOfWeek":"Friday",
+      "Result":"Favorable",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:00:00",
+      "EndTime":"10:24:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Dresses or Gains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:24:00",
+      "EndTime":"10:48:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Healthy",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:24:00",
+      "EndTime":"10:48:00",
+      "DayOfWeek":"Monday",
+      "Result":"Interview with Official",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:24:00",
+      "EndTime":"10:48:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Failure in work ",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"10:24:00",
+      "EndTime":"10:48:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Money and grains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:24:00",
+      "EndTime":"10:48:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Enemies will be destroyed",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:24:00",
+      "EndTime":"10:48:00",
+      "DayOfWeek":"Friday",
+      "Result":"Material and vehicle comforts",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:24:00",
+      "EndTime":"10:48:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Fickle minded",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"10:48:00",
+      "EndTime":"11:12:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Auspicious deeds",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:48:00",
+      "EndTime":"11:12:00",
+      "DayOfWeek":"Monday",
+      "Result":"Hurdles in the proposal",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"10:48:00",
+      "EndTime":"11:12:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Difficulty",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"10:48:00",
+      "EndTime":"11:12:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Success in Job",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:48:00",
+      "EndTime":"11:12:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Success in marriage dealings",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:48:00",
+      "EndTime":"11:12:00",
+      "DayOfWeek":"Friday",
+      "Result":"Safe and Profitable",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"10:48:00",
+      "EndTime":"11:12:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Loss of friendship",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"11:12:00",
+      "EndTime":"11:36:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Try and succeed",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"11:12:00",
+      "EndTime":"11:36:00",
+      "DayOfWeek":"Monday",
+      "Result":"Diseases",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"11:12:00",
+      "EndTime":"11:36:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Fear from animals",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"11:12:00",
+      "EndTime":"11:36:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Profitable",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"11:12:00",
+      "EndTime":"11:36:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Disease cures",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"11:12:00",
+      "EndTime":"11:36:00",
+      "DayOfWeek":"Friday",
+      "Result":"Successful proposal",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"11:12:00",
+      "EndTime":"11:36:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Friendship",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"11:36:00",
+      "EndTime":"12:00:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Fear from poison",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"11:36:00",
+      "EndTime":"12:00:00",
+      "DayOfWeek":"Monday",
+      "Result":"Proposal will be fruitful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"11:36:00",
+      "EndTime":"12:00:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Problems with fire",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"11:36:00",
+      "EndTime":"12:00:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Try and succeed",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"11:36:00",
+      "EndTime":"12:00:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Quarrelsome",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"11:36:00",
+      "EndTime":"12:00:00",
+      "DayOfWeek":"Friday",
+      "Result":"Fear from weapons",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"11:36:00",
+      "EndTime":"12:00:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Gains through ladies",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:00:00",
+      "EndTime":"12:24:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Job",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:00:00",
+      "EndTime":"12:24:00",
+      "DayOfWeek":"Monday",
+      "Result":"Destruction of enemies",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:00:00",
+      "EndTime":"12:24:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Disease ",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"12:00:00",
+      "EndTime":"12:24:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"May buy dress",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:00:00",
+      "EndTime":"12:24:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Danger to job",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"12:00:00",
+      "EndTime":"12:24:00",
+      "DayOfWeek":"Friday",
+      "Result":"Destruction of enemies",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:00:00",
+      "EndTime":"12:24:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Monitory gains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:24:00",
+      "EndTime":"12:48:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Fever \/ disease",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"12:24:00",
+      "EndTime":"12:48:00",
+      "DayOfWeek":"Monday",
+      "Result":"Gains from Cow",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:24:00",
+      "EndTime":"12:48:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"New arrival or Baby boy may born",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:24:00",
+      "EndTime":"12:48:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Happiness",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:24:00",
+      "EndTime":"12:48:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Mad with rage",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"12:24:00",
+      "EndTime":"12:48:00",
+      "DayOfWeek":"Friday",
+      "Result":"Much More fear",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"12:24:00",
+      "EndTime":"12:48:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Journey will be fruitful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:48:00",
+      "EndTime":"13:12:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Official Honors",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:48:00",
+      "EndTime":"13:12:00",
+      "DayOfWeek":"Monday",
+      "Result":"Success",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:48:00",
+      "EndTime":"13:12:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Successful work",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:48:00",
+      "EndTime":"13:12:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Safe",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:48:00",
+      "EndTime":"13:12:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Successful work",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:48:00",
+      "EndTime":"13:12:00",
+      "DayOfWeek":"Friday",
+      "Result":"Good Education",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"12:48:00",
+      "EndTime":"13:12:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Loss in Journey",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"13:12:00",
+      "EndTime":"13:36:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Gains through journey",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"13:12:00",
+      "EndTime":"13:36:00",
+      "DayOfWeek":"Monday",
+      "Result":"Healthy",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"13:12:00",
+      "EndTime":"13:36:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Problems",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"13:12:00",
+      "EndTime":"13:36:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Minimum gains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"13:12:00",
+      "EndTime":"13:36:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Loss of position",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"13:12:00",
+      "EndTime":"13:36:00",
+      "DayOfWeek":"Friday",
+      "Result":"Diseases",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"13:12:00",
+      "EndTime":"13:36:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Safe",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"13:36:00",
+      "EndTime":"14:00:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Controversy",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"13:36:00",
+      "EndTime":"14:00:00",
+      "DayOfWeek":"Monday",
+      "Result":"Friendship",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"13:36:00",
+      "EndTime":"14:00:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Official Honor",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"13:36:00",
+      "EndTime":"14:00:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Quarrel",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"13:36:00",
+      "EndTime":"14:00:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Fear from thieves",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"13:36:00",
+      "EndTime":"14:00:00",
+      "DayOfWeek":"Friday",
+      "Result":"Sadness",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"13:36:00",
+      "EndTime":"14:00:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Vehicle comfort",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:00:00",
+      "EndTime":"14:24:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Friendship",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:00:00",
+      "EndTime":"14:24:00",
+      "DayOfWeek":"Monday",
+      "Result":"Safety",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:00:00",
+      "EndTime":"14:24:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Failure",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"14:00:00",
+      "EndTime":"14:24:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Wishes will be fruitful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:00:00",
+      "EndTime":"14:24:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Quarrels in marriage dealings",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"14:00:00",
+      "EndTime":"14:24:00",
+      "DayOfWeek":"Friday",
+      "Result":"Vehicle comforts",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:00:00",
+      "EndTime":"14:24:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Gain the Knowledge",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:24:00",
+      "EndTime":"14:48:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Fear of getting fever",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"14:24:00",
+      "EndTime":"14:48:00",
+      "DayOfWeek":"Monday",
+      "Result":"Failure in the work",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"14:24:00",
+      "EndTime":"14:48:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Loss in the work proposed",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"14:24:00",
+      "EndTime":"14:48:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"New arrival \/ baby boy may born",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:24:00",
+      "EndTime":"14:48:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Win over controversy",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:24:00",
+      "EndTime":"14:48:00",
+      "DayOfWeek":"Friday",
+      "Result":"Gains through ladies",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:24:00",
+      "EndTime":"14:48:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Entertainment",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:48:00",
+      "EndTime":"15:12:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Monitary Gains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:48:00",
+      "EndTime":"15:12:00",
+      "DayOfWeek":"Monday",
+      "Result":"Good for Marriage dealings",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:48:00",
+      "EndTime":"15:12:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Failure",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"14:48:00",
+      "EndTime":"15:12:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Good for job",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:48:00",
+      "EndTime":"15:12:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Good for Pilgrimage",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"14:48:00",
+      "EndTime":"15:12:00",
+      "DayOfWeek":"Friday",
+      "Result":"Fear from Poxes",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"14:48:00",
+      "EndTime":"15:12:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Quarrels",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"15:12:00",
+      "EndTime":"15:36:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Imprisonment",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"15:12:00",
+      "EndTime":"15:36:00",
+      "DayOfWeek":"Monday",
+      "Result":"Success in work",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"15:12:00",
+      "EndTime":"15:36:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Destruction of enemies",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"15:12:00",
+      "EndTime":"15:36:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Good for Journey",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"15:12:00",
+      "EndTime":"15:36:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Fear",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"15:12:00",
+      "EndTime":"15:36:00",
+      "DayOfWeek":"Friday",
+      "Result":"Fear of a poisoned animal",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"15:12:00",
+      "EndTime":"15:36:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Loss of job",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"15:36:00",
+      "EndTime":"16:00:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Transfer",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"15:36:00",
+      "EndTime":"16:00:00",
+      "DayOfWeek":"Monday",
+      "Result":"Monitary Gains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"15:36:00",
+      "EndTime":"16:00:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Hurdle in job",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"15:36:00",
+      "EndTime":"16:00:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Successful dealing",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"15:36:00",
+      "EndTime":"16:00:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Failure",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"15:36:00",
+      "EndTime":"16:00:00",
+      "DayOfWeek":"Friday",
+      "Result":"Difficulty in journey",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"15:36:00",
+      "EndTime":"16:00:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Try and succeed",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:00:00",
+      "EndTime":"16:24:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Failure in education",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"16:00:00",
+      "EndTime":"16:24:00",
+      "DayOfWeek":"Monday",
+      "Result":"Good for education",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:00:00",
+      "EndTime":"16:24:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Successful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:00:00",
+      "EndTime":"16:24:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Good for marriage dealings",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:00:00",
+      "EndTime":"16:24:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Safe in journeys",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:00:00",
+      "EndTime":"16:24:00",
+      "DayOfWeek":"Friday",
+      "Result":"Fear of enemy",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"16:00:00",
+      "EndTime":"16:24:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Sadness",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"16:24:00",
+      "EndTime":"16:48:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Comforts through ladies",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:24:00",
+      "EndTime":"16:48:00",
+      "DayOfWeek":"Monday",
+      "Result":"Loss in the fixed dealings",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"16:24:00",
+      "EndTime":"16:48:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Proposal will be fruitful",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:24:00",
+      "EndTime":"16:48:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Success in completing the task",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:24:00",
+      "EndTime":"16:48:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Good for marriage dealings",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:24:00",
+      "EndTime":"16:48:00",
+      "DayOfWeek":"Friday",
+      "Result":"Loss in the work",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"16:24:00",
+      "EndTime":"16:48:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Destruction of enemy",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:48:00",
+      "EndTime":"17:12:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Gain in Journey",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:48:00",
+      "EndTime":"17:12:00",
+      "DayOfWeek":"Monday",
+      "Result":"Success in job",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:48:00",
+      "EndTime":"17:12:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Profit in deal",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:48:00",
+      "EndTime":"17:12:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Feeling bad",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"16:48:00",
+      "EndTime":"17:12:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Quarrel",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"16:48:00",
+      "EndTime":"17:12:00",
+      "DayOfWeek":"Friday",
+      "Result":"Safety in journey",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"16:48:00",
+      "EndTime":"17:12:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Destruction of enemy",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"17:12:00",
+      "EndTime":"17:36:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Journey is not fruitful",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"17:12:00",
+      "EndTime":"17:36:00",
+      "DayOfWeek":"Monday",
+      "Result":"Pilgrimage",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"17:12:00",
+      "EndTime":"17:36:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Comfort - safety",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"17:12:00",
+      "EndTime":"17:36:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Relatives may visit",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"17:12:00",
+      "EndTime":"17:36:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Fever - problem in operation",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"17:12:00",
+      "EndTime":"17:36:00",
+      "DayOfWeek":"Friday",
+      "Result":"Sadness",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"17:12:00",
+      "EndTime":"17:36:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Gains in journey",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"17:36:00",
+      "EndTime":"18:00:00",
+      "DayOfWeek":"Sunday",
+      "Result":"Land gains",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"17:36:00",
+      "EndTime":"18:00:00",
+      "DayOfWeek":"Monday",
+      "Result":"Fear from Officials",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"17:36:00",
+      "EndTime":"18:00:00",
+      "DayOfWeek":"Tuesday",
+      "Result":"Friendship",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"17:36:00",
+      "EndTime":"18:00:00",
+      "DayOfWeek":"Wednesday",
+      "Result":"Danger of an accident",
+      "Status": "Bad"
+   },
+   {
+      "StartTime":"17:36:00",
+      "EndTime":"18:00:00",
+      "DayOfWeek":"Thursday",
+      "Result":"Good for education",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"17:36:00",
+      "EndTime":"18:00:00",
+      "DayOfWeek":"Friday",
+      "Result":"Official Honor",
+      "Status": "Good"
+   },
+   {
+      "StartTime":"17:36:00",
+      "EndTime":"18:00:00",
+      "DayOfWeek":"Saturday",
+      "Result":"Good news",
+      "Status": "Good"
+   }
+]

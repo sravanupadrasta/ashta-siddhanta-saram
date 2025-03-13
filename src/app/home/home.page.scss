@@ -1,0 +1,46 @@
+.good {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .bad {
+    color: red;
+    font-weight: bold;
+  }
+  
+
+  .good-row {
+    background-color: #d4edda; /* light green */
+    color: green;
+    padding: 8px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+  }
+  
+  .bad-row {
+    background-color: #f8d7da; /* light red */
+    color: red;
+    padding: 8px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+  }
+
+  ion-card{
+    margin: 8px;
+  }
+  
+  .dropdown-container {
+    background: #fff;
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+    margin: 0 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .centering{
+    display: flex;
+    align-items: center;
+  }
