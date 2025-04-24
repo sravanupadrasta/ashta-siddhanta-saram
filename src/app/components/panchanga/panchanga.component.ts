@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { NakshatraService, Panchanga } from 'src/app/services/nakshatra.service';
+import { Thidhi, ThidhiService } from 'src/app/services/thidhi/thidhi.service';
+
 
 @Component({
   selector: 'app-panchanga',
@@ -16,7 +18,16 @@ export class PanchangaComponent  implements OnInit {
   date: string = new Date(Date.now()).toISOString();
   showCalendar: boolean = false;
 
-  constructor(private nakshatraService: NakshatraService) {
+  currentTithiName = '';
+  currentTithiStart = '';
+  currentTithiEnd = '';
+  nextTithiName = '';
+  nextTithiEnd = '';
+
+
+  constructor(private nakshatraService: NakshatraService,
+              private thidhiService: ThidhiService
+  ) {
     this.panchanga = {
       nakshatra: {
         name: '',
@@ -37,6 +48,15 @@ export class PanchangaComponent  implements OnInit {
 
   getPanchanga(): void {
     this.panchanga = this.nakshatraService.determineNakshatraStartEnd(new Date(this.date));
+    const { current, next } = this.thidhiService.getCurrentAndNextThidhi(new Date(this.date));
+
+    this.currentTithiName = `${current.phase} Paksha - ${current.thidhi}`;
+    this.currentTithiStart = current.start.toLocaleString();
+    this.currentTithiEnd = current.end.toLocaleString();
+
+    this.nextTithiName = `${next.phase} Paksha - ${next.thidhi}`;
+    this.nextTithiEnd = next.end.toLocaleString();
+
   }
 
   onDateChange(event: any): void {

@@ -25,3 +25,44 @@
   .align-right {
     text-align: right;
   }
+
+
+  .thidhi-card {
+    background: linear-gradient(to right, #2d2d2d, #1a1a1a);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    margin: 16px;
+  }
+  
+  ion-card-title[color="light"] {
+    color: #ffd700 !important; // Gold tone for sacred feel
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .thidhi-item {
+    --background: transparent;
+    --border-color: transparent;
+    // padding-top: 8px;
+    // padding-bottom: 8px;
+    color: #f0f0f0;
+  
+    ion-label {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+  
+    ion-text {
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+  
+    .align-right {
+      text-align: right;
+      width: 100%;
+      display: block;
+    }
+  }
+  

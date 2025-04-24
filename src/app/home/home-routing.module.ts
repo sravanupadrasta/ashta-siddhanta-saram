@@ -7,7 +7,19 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage
+  },  {
+    path: 'current',
+    loadChildren: () => import('./current/current.module').then( m => m.CurrentPageModule)
+  },
+  {
+    path: 'table',
+    loadChildren: () => import('./table/table.module').then( m => m.TablePageModule)
+  },
+  {
+    path: 'panchang',
+    loadChildren: () => import('./panchang/panchang.module').then( m => m.PanchangPageModule)
   }
+
 ];
 
 @NgModule({

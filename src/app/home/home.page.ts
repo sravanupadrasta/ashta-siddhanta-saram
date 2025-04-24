@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import * as moment from 'moment-timezone';
 import { NakshatraModule } from '../components/nakshatra/nakshatra.module';
 import { PanchangaModule } from '../components/panchanga/panchanga.module';
+import { ThidhiService } from '../services/thidhi/thidhi.service';
 
 @Component({
   selector: 'app-home',
@@ -57,9 +58,19 @@ export class HomePage implements OnInit {
     // Toggle dropdown visibility.
     showDropdown = false;
 
+    currentTithiName = '';
+    currentTithiStart = '';
+    currentTithiEnd = '';
+    nextTithiName = '';
+    nextTithiEnd = '';
+  
+
     private clockInterval: any;
   
-    constructor(private ashtaService: AshtaSiddhantaService, private loadingController: LoadingController, private http: HttpClient) {}
+    constructor(private ashtaService: AshtaSiddhantaService, 
+                private thidhiService: ThidhiService,
+                private loadingController: LoadingController, 
+                private http: HttpClient) {}
   
     ngOnInit() {
       // Update current time every second and recompute current segment
@@ -95,6 +106,15 @@ export class HomePage implements OnInit {
           console.error('Error loading cities data:', error);
         }
       );
+
+      const { current, next } = this.thidhiService.getCurrentAndNextThidhi(new Date());
+
+      this.currentTithiName = `${current.phase} Paksha - ${current.thidhi}`;
+      this.currentTithiStart = current.start.toLocaleString();
+      this.currentTithiEnd = current.end.toLocaleString();
+  
+      this.nextTithiName = `${next.phase} Paksha - ${next.thidhi}`;
+      this.nextTithiEnd = next.end.toLocaleString();
     }
   
     ngOnDestroy() {

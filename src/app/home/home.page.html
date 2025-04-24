@@ -72,6 +72,33 @@
         <p><strong>Minutes Left:</strong> {{ minutesLeft }}</p>
       </ion-card-content>
     </ion-card>
+    <ion-card class="thidhi-card">
+      <ion-card-header>
+        <ion-card-title color="light">Thidhi Info</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item class="thidhi-item">
+          <ion-label>Current Thidhi</ion-label>
+          <ion-text>{{ currentTithiName }}</ion-text>
+        </ion-item>
+        <ion-item class="thidhi-item">
+          <ion-label>Start Time</ion-label>
+          <ion-text class="align-right">{{ currentTithiStart }}</ion-text>
+        </ion-item>
+        <ion-item class="thidhi-item">
+          <ion-label>End Time</ion-label>
+          <ion-text class="align-right">{{ currentTithiEnd }}</ion-text>
+        </ion-item>
+        <ion-item class="thidhi-item">
+          <ion-label>Next Thidhi</ion-label>
+          <ion-text>{{ nextTithiName }}</ion-text>
+        </ion-item>
+        <ion-item class="thidhi-item">
+          <ion-label>Next End Time</ion-label>
+          <ion-text class="align-right">{{ nextTithiEnd }}</ion-text>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
     <app-nakshatra></app-nakshatra>
   </div>
 
