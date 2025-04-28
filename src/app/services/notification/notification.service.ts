@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { getMessaging, getToken, isSupported } from 'firebase/messaging';
 import { environment } from 'src/environments/environment';
 import { FcmTokenService } from '../fcm-token/fcm-token.service';
+import { LocationService } from '../location/location.service';
 
 @Injectable({ providedIn: 'root' })
 export class NotificationService {
   private messaging = getMessaging();
   private vapidKey = environment.messagingVAPIDKey;
 
-  constructor(private fcmTokenService: FcmTokenService) {}
+  constructor(private fcmTokenService: FcmTokenService,
+              private locationService: LocationService
+  ) {}
 
   async requestPermissionAndGetToken(): Promise<string | null> {
     const supported = await isSupported();
@@ -33,7 +36,8 @@ export class NotificationService {
 
       console.log('FCM token:', token);
       if (token) {
-        await this.fcmTokenService.saveToken(token);
+        const userLocation = await this.locationService.getLocation();
+        await this.fcmTokenService.saveToken(token, userLocation, Intl.DateTimeFormat().resolvedOptions().timeZone);
       }
       return token;
     } catch (err) {

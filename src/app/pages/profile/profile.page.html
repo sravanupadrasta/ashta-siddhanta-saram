@@ -67,7 +67,7 @@
   <ion-grid *ngIf="!notificationsEnabled || showLocationRequest || !showLocationRequest" class="perm-grid">
 
     <!-- Notifications -->
-    <ion-col size="12" sizeMd="6" *ngIf="!notificationsEnabled">
+    <ion-col size="12" sizeMd="6" *ngIf="locationGranted && !notificationsEnabled">
       <ion-card color="light">
         <ion-card-content class="ion-text-center">
           <ion-button expand="block" (click)="enableNotifications()">

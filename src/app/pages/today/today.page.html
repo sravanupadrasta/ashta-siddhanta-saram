@@ -11,7 +11,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card *ngIf="!notificationsEnabled" color="light">
+  <ion-card *ngIf="locationGranted && !notificationsEnabled" color="light">
     <ion-card-content class="ion-text-center">
       <ion-button expand="block" color="primary" (click)="enableNotifications()">
         Enable Notifications

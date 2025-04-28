@@ -76,6 +76,7 @@ export class ProfilePage implements OnInit {
   location: string = 'Unknown';
   nearestLocation: string = 'Unknown';
   showAddForm = false;
+  locationGranted = false;
 
   constructor(
     private dbService: DBService,
@@ -102,6 +103,7 @@ export class ProfilePage implements OnInit {
       if (location) {
         this.location = await this.locationService.getLocationString();
         this.showLocationRequest = false;
+        this.locationGranted = true;
         this.geoDataService.ready$
           .pipe(filter((ready) => ready))
           .subscribe(async () => {
@@ -120,6 +122,7 @@ export class ProfilePage implements OnInit {
           });
       } else {
         this.showLocationRequest = true;
+        this.locationGranted = false;
       }
     });
 
@@ -208,6 +211,7 @@ export class ProfilePage implements OnInit {
     await this.locationService.requestUserLocation(
       async () => {
         this.showLocationRequest = false;
+        this.locationGranted = true;
         const toast = await this.toastController.create({
           message: 'Location saved successfully!',
           duration: 2000,

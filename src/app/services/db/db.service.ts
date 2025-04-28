@@ -67,10 +67,12 @@ export class DBService extends Dexie {
   }
 
   async addFcmToken(record: FcmTokenRecord): Promise<number> {
+    console.log('Adding FCM token:', record);
     return this.fcmTokens.add(record);
   }
 
   async findFcmToken(token: string): Promise<FcmTokenRecord | undefined> {
+    console.log('Finding FCM token:', token);
     return this.fcmTokens.where('token').equals(token).first();
   }
 
