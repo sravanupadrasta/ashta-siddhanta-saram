@@ -1,0 +1,176 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- <ion-card *ngIf="!notificationsEnabled" color="light">
+    <ion-card-content class="ion-text-center">
+      <ion-button expand="block" color="primary" (click)="enableNotifications()">
+        Enable Notifications
+      </ion-button>
+      <ion-text color="medium" style="font-size: small;">Get notified about Panchang updates!</ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="showLocationRequest" color="light">
+    <ion-card-content class="ion-text-center">
+      <ion-button expand="block" color="primary" (click)="requestUserLocation()">
+        Share Location to Personalize Panchanga
+      </ion-button>
+      <ion-text color="medium" style="font-size: small;">Location is used to calculate local sunrise and timings.</ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="!showLocationRequest" color="light">
+    <ion-card-content class="ion-text-center">
+      <ion-button expand="block" color="primary" (click)="requestUserLocation()">
+        Update Location
+      </ion-button>
+      <ion-text color="medium" style="font-size: small;">Location is used to calculate local sunrise and timings.</ion-text>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item *ngFor="let person of profiles">
+      <ion-label>
+        <h2>{{ person.name }}</h2>
+        <p>{{ person.nakshatra }}</p>
+      </ion-label>
+      <ion-button slot="end" color="danger" (click)="deletePerson(person.id ?? 0)">Delete</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Add Person</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input [(ngModel)]="data.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Nakshatra</ion-label>
+        <ion-select [(ngModel)]="data.nakshatra">
+          <ion-select-option *ngFor="let n of nakshatras" [value]="n">{{ n }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button expand="block" (click)="savePerson()">Save</ion-button>
+    </ion-card-content>
+  </ion-card> -->
+
+  <ion-grid *ngIf="!notificationsEnabled || showLocationRequest || !showLocationRequest" class="perm-grid">
+
+    <!-- Notifications -->
+    <ion-col size="12" sizeMd="6" *ngIf="!notificationsEnabled">
+      <ion-card color="light">
+        <ion-card-content class="ion-text-center">
+          <ion-button expand="block" (click)="enableNotifications()">
+            Enable Notifications
+          </ion-button>
+          <p class="helper">Get notified about Panchang updates!</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <!-- Location -->
+    <ion-col size="12" sizeMd="6">
+      <ion-card color="light">
+        <ion-card-header>
+          <ion-card-title class="ion-text-center">
+            {{ showLocationRequest ? 'Personalize Panchanga' : 'Location' }}
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content class="ion-text-center">
+          <!-- action button -->
+          <ion-button expand="block" (click)="requestUserLocation()">
+            {{ showLocationRequest ? 'Share My Location' : 'Update Location' }}
+          </ion-button>
+
+          <!-- helper text -->
+          <p class="helper-text">
+            Location is used to calculate local sunrise and timings.
+          </p>
+
+          <!-- nearest location display -->
+          <ion-item *ngIf="nearestLocation" lines="none" class="nearest-item">
+            <ion-icon name="location-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h3>Nearest Location</h3>
+              <p>{{ nearestLocation }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+
+  </ion-grid>
+
+  <!-- ===== PROFILES LIST ===== -->
+  <ion-list *ngIf="profiles.length; else emptyState">
+
+    <ion-list-header>
+      <ion-label>Saved Profiles</ion-label>
+    </ion-list-header>
+
+    <ion-item-sliding *ngFor="let person of profiles; let i = index">
+      <ion-item>
+        <ion-label>
+          <h2>{{ person.name }}</h2>
+          <p>{{ person.nakshatra }}</p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="deletePerson(i, person.id ?? 0)">
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <!-- Empty-state hint -->
+  <ng-template #emptyState>
+    <ion-text color="medium" class="ion-text-center">
+      <p>No profiles yet – add one below.</p>
+    </ion-text>
+  </ng-template>
+
+  <!-- ===== ADD PERSON ===== -->
+  <ion-button expand="block" color="secondary" (click)="toggleAddForm()" class="ion-margin-bottom">
+    {{ showAddForm ? 'Cancel' : 'Add Person' }}
+  </ion-button>
+
+  <!-- 🆕 only show this when showAddForm is true -->
+  <ion-card *ngIf="showAddForm">
+    <ion-card-header>
+      <ion-card-title>Add Person</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item fill="solid">
+        <ion-label position="stacked">Name</ion-label>
+        <ion-input [(ngModel)]="data.name" placeholder="e.g. Rama"></ion-input>
+      </ion-item>
+
+      <ion-item fill="solid">
+        <ion-label position="stacked">Nakshatra</ion-label>
+        <ion-select [(ngModel)]="data.nakshatra" interface="popover">
+          <ion-select-option *ngFor="let n of nakshatras" [value]="n">
+            {{ n }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-button expand="block" class="ion-margin-top" (click)="savePerson()">
+        Save
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

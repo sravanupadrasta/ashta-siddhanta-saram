@@ -1,0 +1,97 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Today</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Today</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngIf="!notificationsEnabled" color="light">
+    <ion-card-content class="ion-text-center">
+      <ion-button expand="block" color="primary" (click)="enableNotifications()">
+        Enable Notifications
+      </ion-button>
+      <ion-text color="medium" style="font-size: small;">Get notified about Panchang updates!</ion-text>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card *ngIf="showLocationRequest" color="light">
+    <ion-card-content class="ion-text-center">
+      <ion-button expand="block" color="primary" (click)="requestUserLocation()">
+        Share Location to Personalize Panchanga
+      </ion-button>
+      <ion-text color="medium" style="font-size: small;">Location is used to calculate local sunrise and timings.</ion-text>
+    </ion-card-content>
+  </ion-card>  
+
+  <ion-grid>
+    <ion-row>
+      <!-- Location Card -->
+      <ion-col size="12" sizeMd="6">
+        <ion-card color="primary" style="color: white;">
+          <ion-card-header>
+            <ion-card-title>Location</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Location:</strong> {{ locationString }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <!-- Times Card -->
+      <ion-col size="12" sizeMd="6">
+        <ion-card color="primary" style="color: white;">
+          <ion-card-header>
+            <ion-card-title>Times</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p><strong>Sunrise:</strong> {{ currentSunrise }}</p>
+            <p><strong>Current Time:</strong> {{ currentTime }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card [attr.color]="currentSegment?.Status === 'Good' ? 'success' : 'danger'" style="color: white;"
+    *ngIf="currentSegment">
+    <ion-card-header>
+      <ion-card-title>Result</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Result:</strong> {{ currentSegment.Result }}</p>
+      <p><strong>Minutes Left:</strong> {{ minutesLeft }}</p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="thidhi-card">
+    <ion-card-header>
+      <ion-card-title color="light">Thidhi Info</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item class="thidhi-item">
+        <ion-label>Current Thidhi</ion-label>
+        <ion-text>{{ currentThidhiName }}</ion-text>
+      </ion-item>
+      <ion-item class="thidhi-item">
+        <ion-label>Start Time</ion-label>
+        <ion-text class="align-right">{{ currentThidhiStart }}</ion-text>
+      </ion-item>
+      <ion-item class="thidhi-item">
+        <ion-label>End Time</ion-label>
+        <ion-text class="align-right">{{ currentThidhiEnd }}</ion-text>
+      </ion-item>
+      <ion-item class="thidhi-item">
+        <ion-label>Next Thidhi</ion-label>
+        <ion-text>{{ nextThidhiName }}</ion-text>
+      </ion-item>
+      <ion-item class="thidhi-item">
+        <ion-label>Next End Time</ion-label>
+        <ion-text class="align-right">{{ nextThidhiEnd }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <app-nakshatra></app-nakshatra>
+</ion-content>

@@ -1,0 +1,111 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Panchangam</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Panchangam</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-button expand="block" (click)="toggleCalendar()">
+    {{ showCalendar ? 'Hide Calendar' : 'Pick a Date' }}
+  </ion-button>
+  <div *ngIf="showCalendar">
+    <ion-datetime
+      [value]="date"
+      presentation="date"
+      display-format="MMM D, YYYY"
+      picker-format="MMM D, YYYY"
+      (ionChange)="onDateChange($event)">
+    </ion-datetime>
+  </div>
+  
+  <ion-card class="thidhi-card">
+    <ion-card-header>
+      <ion-card-title color="light">Thidhi Info</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item class="thidhi-item">
+        <ion-label>Current Thidhi</ion-label>
+        <ion-text>{{ currentTithiName }}</ion-text>
+      </ion-item>
+      <ion-item class="thidhi-item">
+        <ion-label>Start Time</ion-label>
+        <ion-text class="align-right">{{ currentTithiStart }}</ion-text>
+      </ion-item>
+      <ion-item class="thidhi-item">
+        <ion-label>End Time</ion-label>
+        <ion-text class="align-right">{{ currentTithiEnd }}</ion-text>
+      </ion-item>
+      <ion-item class="thidhi-item">
+        <ion-label>Next Thidhi</ion-label>
+        <ion-text>{{ nextTithiName }}</ion-text>
+      </ion-item>
+      <ion-item class="thidhi-item">
+        <ion-label>Next End Time</ion-label>
+        <ion-text class="align-right">{{ nextTithiEnd }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card class="nakshatra-card">
+    <ion-card-header>
+      <ion-card-title color="light">Current Nakshatra</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item class="nakshatra-item">
+        <ion-label>Nakshatra</ion-label>
+        <ion-text>{{ panchanga.nakshatra.name }}</ion-text>
+      </ion-item>
+      <ion-item class="nakshatra-item">
+        <ion-label>Start Time</ion-label>
+        <ion-text class="align-right">{{ panchanga.nakshatra.start }}</ion-text>
+      </ion-item>
+      <ion-item class="nakshatra-item">
+        <ion-label>End Time</ion-label>
+        <ion-text class="align-right">{{ panchanga.nakshatra.end }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card style="--background: var(--ion-color-primary-75a);" class="nakshatra-card">
+    <ion-card-header>
+      <ion-card-title color="light">Next Nakshatra</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item class="nakshatra-item">
+        <ion-label>Next Nakshatra</ion-label>
+        <ion-text>{{ panchanga.nextNakshatra.name }}</ion-text>
+      </ion-item>
+      <ion-item class="nakshatra-item">
+        <ion-label>Start Time</ion-label>
+        <ion-text class="align-right">{{ panchanga.nextNakshatra.start }}</ion-text>
+      </ion-item>
+      <ion-item class="nakshatra-item">
+        <ion-label>End Time</ion-label>
+        <ion-text class="align-right">{{ panchanga.nextNakshatra.end }}</ion-text>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Tarabalam</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item *ngFor="let tara of tarabalam">
+        <ion-label>
+          {{ tara.personName }} →
+          {{ tara.tara }}
+        </ion-label>
+        <ion-badge slot="end" [color]="tara.status === 'good' ? 'success' : 'danger'">
+          {{ tara.status }}
+        </ion-badge>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>  
+</ion-content>

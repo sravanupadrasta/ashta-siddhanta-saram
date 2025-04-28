@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
-import { NakshatraService, Panchanga } from 'src/app/services/nakshatra.service';
+import { NakshatraService, Panchanga } from 'src/app/services/nakshatra/nakshatra.service';
+import { IonCard, IonItem, IonCardHeader, IonCardTitle, IonCardContent, IonLabel, IonText } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-nakshatra',
   templateUrl: './nakshatra.component.html',
   styleUrls: ['./nakshatra.component.scss'],
-  standalone: false,
+  standalone: true,
+  imports: [IonText, IonLabel, IonCardContent, IonCardTitle, IonCardHeader, IonItem, IonCard, CommonModule]
 })
 export class NakshatraComponent implements OnInit {
   panchanga: Panchanga;

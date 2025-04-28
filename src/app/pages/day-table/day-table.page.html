@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Daily Table</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Daily Table</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item button (click)="toggleDropdown()">
+    <ion-label>
+      {{ selectedLocation ? selectedLocation.name : 'Select Location' }}
+    </ion-label>
+    <ion-icon slot="end" name="arrow-down"></ion-icon>
+  </ion-item>
+
+  <!-- Dropdown Panel -->
+  <div *ngIf="showDropdown" class="dropdown-container">
+    <ion-searchbar
+      placeholder="Search locations"
+      [(ngModel)]="searchText"
+      (ionInput)="updateFilteredLocations($event)">
+    </ion-searchbar>
+    <ion-list>
+      <ion-item
+        *ngFor="let location of filteredLocations"
+        (click)="selectLocation(location)">
+        {{ location.name }}
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <!-- Existing Location Card -->
+  <ion-card color="primary" style="color: white;">
+    <ion-card-header>
+      <ion-card-title>Location</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Location:</strong> {{ selectedLocation?.name || 'Not selected' }}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Button to toggle the calendar -->
+  <ion-button expand="block" (click)="toggleCalendar()">
+    {{ showCalendar ? 'Hide Calendar' : 'Pick a Date' }}
+  </ion-button>
+
+  <!-- Date Picker (hidden until toggled) -->
+  <div *ngIf="showCalendar">
+    <ion-datetime
+      [value]="selectedDate"
+      presentation="date"
+      display-format="MMM D, YYYY"
+      picker-format="MMM D, YYYY"
+      (ionChange)="onDateChange($event)">
+    </ion-datetime>
+  </div>
+
+  <!-- Table of 24 Segments for the Selected Date -->
+  <ion-grid>
+    <!-- Header Row -->
+    <ion-row>
+      <ion-col size="8"><strong>Time</strong></ion-col>
+      <ion-col size="4"><strong>Result</strong></ion-col>
+    </ion-row>
+    <!-- Data Rows -->
+    <ion-row *ngFor="let seg of adjustedSegmentsDaily" [ngClass]="{'good-row': seg.Status === 'Good', 'bad-row': seg.Status === 'Bad'}">
+      <ion-col size="5">
+        <div><strong>Start:</strong> {{ seg.adjustedStart }}</div>
+        <div><strong>End:&nbsp;</strong> {{ seg.adjustedEnd }}</div>
+      </ion-col>
+      <ion-col size="7" class="centering">
+        {{ seg.Result }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+</ion-content>

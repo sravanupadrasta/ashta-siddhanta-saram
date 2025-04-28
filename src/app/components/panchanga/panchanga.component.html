@@ -78,3 +78,39 @@
     </ion-item>
   </ion-card-content>
 </ion-card>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Tarabalam</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item *ngFor="let tara of tarabalam">
+      <ion-label>
+        {{ tara.personName }} →
+        {{ tara.tara }}
+      </ion-label>
+      <ion-badge slot="end" [color]="tara.status === 'good' ? 'success' : 'danger'">
+        {{ tara.status }}
+      </ion-badge>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Add Person</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="stacked">Name</ion-label>
+      <ion-input [(ngModel)]="newPerson.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Nakshatra</ion-label>
+      <ion-select [(ngModel)]="newPerson.nakshatra">
+        <ion-select-option *ngFor="let n of nakshatras" [value]="n">{{ n }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="block" (click)="savePerson()">Save</ion-button>
+  </ion-card-content>
+</ion-card>

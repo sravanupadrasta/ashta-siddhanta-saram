@@ -1,16 +1,10 @@
-<ion-header>
-  <!-- Primary Toolbar with Title and Refresh Icon -->
+<!-- <ion-header>
+
   <ion-toolbar color="primary">
     <ion-title>Ashta Siddhanta Saram</ion-title>
-    <ion-buttons slot="end">
-      <!-- Small refresh button (icon only) triggers doRefresh() -->
-      <ion-button (click)="doRefresh()">
-        <ion-icon name="refresh" slot="icon-only"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 
-  <!-- Toolbar for Tab Selection -->
+
   <ion-toolbar>
     <ion-segment [(ngModel)]="selectedTab">
       <ion-segment-button value="current">
@@ -27,16 +21,29 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <!-- Pull-to-Refresh Component -->
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content pullingText="Pull to refresh" refreshingText="Refreshing..."></ion-refresher-content>
-  </ion-refresher>
+  <ion-card *ngIf="!notificationsEnabled" color="light">
+    <ion-card-content class="ion-text-center">
+      <ion-button expand="block" color="primary" (click)="enableNotifications()">
+        Enable Notifications
+      </ion-button>
+      <ion-text color="medium" style="font-size: small;">Get notified about Panchang updates!</ion-text>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card *ngIf="showLocationRequest" color="light">
+    <ion-card-content class="ion-text-center">
+      <ion-button expand="block" color="primary" (click)="requestUserLocation()">
+        Share Location to Personalize Panchanga
+      </ion-button>
+      <ion-text color="medium" style="font-size: small;">Location is used to calculate local sunrise and timings.</ion-text>
+    </ion-card-content>
+  </ion-card>  
 
-  <!-- ===== CURRENT TIME INFO TAB ===== -->
+
   <div *ngIf="selectedTab === 'current'">
     <ion-grid>
       <ion-row>
-        <!-- Location Card -->
+
         <ion-col size="12" sizeMd="6">
           <ion-card color="primary" style="color: white;">
             <ion-card-header>
@@ -47,7 +54,7 @@
             </ion-card-content>
           </ion-card>
         </ion-col>
-        <!-- Times Card -->
+
         <ion-col size="12" sizeMd="6">
           <ion-card color="primary" style="color: white;">
             <ion-card-header>
@@ -62,7 +69,6 @@
       </ion-row>
     </ion-grid>
 
-    <!-- Separate Card for Result and Minutes Left -->
     <ion-card [attr.color]="currentSegment?.Status === 'Good' ? 'success' : 'danger'"  style="color: white;" *ngIf="currentSegment">
       <ion-card-header>
         <ion-card-title>Result</ion-card-title>
@@ -102,10 +108,10 @@
     <app-nakshatra></app-nakshatra>
   </div>
 
-  <!-- ===== DAILY TABLE TAB ===== -->
+
   <div *ngIf="selectedTab === 'table'">
 
-    <!-- Custom Searchable Dropdown for Locations -->
+
     <ion-item button (click)="toggleDropdown()">
       <ion-label>
         {{ selectedLocation ? selectedLocation.name : 'Select Location' }}
@@ -113,7 +119,7 @@
       <ion-icon slot="end" name="arrow-down"></ion-icon>
     </ion-item>
 
-    <!-- Dropdown Panel -->
+
     <div *ngIf="showDropdown" class="dropdown-container">
       <ion-searchbar
         placeholder="Search locations"
@@ -129,7 +135,7 @@
       </ion-list>
     </div>
 
-    <!-- Existing Location Card -->
+
     <ion-card color="primary" style="color: white;">
       <ion-card-header>
         <ion-card-title>Location</ion-card-title>
@@ -139,12 +145,12 @@
       </ion-card-content>
     </ion-card>
 
-    <!-- Button to toggle the calendar -->
+
     <ion-button expand="block" (click)="toggleCalendar()">
       {{ showCalendar ? 'Hide Calendar' : 'Pick a Date' }}
     </ion-button>
 
-    <!-- Date Picker (hidden until toggled) -->
+
     <div *ngIf="showCalendar">
       <ion-datetime
         [value]="selectedDate"
@@ -154,15 +160,11 @@
         (ionChange)="onDateChange($event)">
       </ion-datetime>
     </div>
-
-    <!-- Table of 24 Segments for the Selected Date -->
     <ion-grid>
-      <!-- Header Row -->
       <ion-row>
         <ion-col size="8"><strong>Time</strong></ion-col>
         <ion-col size="4"><strong>Result</strong></ion-col>
       </ion-row>
-      <!-- Data Rows -->
       <ion-row *ngFor="let seg of adjustedSegmentsDaily" [ngClass]="{'good-row': seg.Status === 'Good', 'bad-row': seg.Status === 'Bad'}">
         <ion-col size="5">
           <div><strong>Start:</strong> {{ seg.adjustedStart }}</div>
@@ -181,4 +183,28 @@
 
 
 
-</ion-content>
+</ion-content> -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="today" routerLink="/home/today">
+      <ion-icon name="today-outline"></ion-icon>
+      <ion-label>Today</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="day-table" routerLink="/home/day-table">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <ion-label>Daily Table</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="panchang" routerLink="/home/panchang">
+      <ion-icon name="planet-outline"></ion-icon>
+      <ion-label>Panchangam</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="anandadiyogam" routerLink="/home/anandadiyogam">
+      <ion-icon name="airplane-outline"></ion-icon>
+      <ion-label>Anandadiyogam</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="profile" routerLink="/home/profile">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
