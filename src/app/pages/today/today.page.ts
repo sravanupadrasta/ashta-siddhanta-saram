@@ -90,16 +90,24 @@ export class TodayPage implements OnInit {
     const now = new Date();
     this.currentTime = now.toLocaleTimeString();
 
-    const location = await this.locationServcie.getLocation();
-    this.locationString = await this.locationServcie.getLocationString();
-    if(location) {
-      const sunrise = (await this.sunriseService.getSunriseAll(new Date(), { coordinate: { lat: location.lat, lng: location.lng } }));
-      this.currentSunrise = sunrise.sunriseTimeString;
-      this.offsetMinutesCurrent = sunrise.offset;
-      this.locationGranted = true;
-      this.showLocationRequest = false;
-      await this.loadCurrentDaySegments();
-    } else {
+    this.locationServcie.getLocation();
+
+    this.locationServcie.locationUpdated$.subscribe(async (location) => {
+      if(location) {
+        const sunrise = await this.sunriseService.getSunriseAll(new Date(), { coordinate: { lat: location.lat, lng: location.lng } });
+        this.currentSunrise = sunrise.sunriseTimeString;
+        this.offsetMinutesCurrent = sunrise.offset;
+        this.locationString = await this.locationServcie.getLocationString();
+        this.locationGranted = true;
+        this.showLocationRequest = false;
+        await this.loadCurrentDaySegments();
+      } else {
+        this.showLocationRequest = true;
+        this.locationGranted = false;
+      }
+    });
+
+    if(!location) {
       this.showLocationRequest = true;
       this.locationGranted = false;
     }

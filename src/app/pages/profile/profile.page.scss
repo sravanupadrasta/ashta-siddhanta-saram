@@ -90,4 +90,17 @@
       transform: translateY(0);
     }
   }
+
+  /* in your page.scss */
+.native-like-ion-input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: var(--ion-color-light-shade);
+  font-size: 1rem;
+  outline: none;
+}
+
   

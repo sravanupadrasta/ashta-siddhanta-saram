@@ -30,6 +30,7 @@
                 "input": "node_modules/ionicons/dist/ionicons/svg",
                 "output": "./svg"
               },
+              "src/combined-sw.js",
               "src/manifest.webmanifest",
               "src/firebase-messaging-sw.js"
             ],

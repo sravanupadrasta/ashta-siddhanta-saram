@@ -23,6 +23,7 @@ import {
 import { PersonProfile } from 'src/app/services/db/db.service';
 import { NakshatraService, Panchanga } from 'src/app/services/nakshatra/nakshatra.service';
 import { PanchangService, PersonTarabalam } from 'src/app/services/panchang/panchang.service';
+import { ProfileService } from 'src/app/services/profile/profile.service';
 import { ThidhiService } from 'src/app/services/thidhi/thidhi.service';
 
 @Component({
@@ -68,7 +69,8 @@ export class PanchangamPage implements OnInit {
   constructor(
     private nakshatraService: NakshatraService,
     private thidhiService: ThidhiService,
-    public panchangService: PanchangService
+    public panchangService: PanchangService,
+    private profileService: ProfileService
   ) {
     this.panchanga = {
       nakshatra: {
@@ -85,9 +87,19 @@ export class PanchangamPage implements OnInit {
   }
 
   async ngOnInit() {
+    await this.init();
+  }
+
+  async init() {
     this.getPanchanga();
     this.nakshatras = this.panchangService.getAllNakshatras();
     this.people = await this.panchangService.getPeopleNakshatras();
+    this.profileService.profilesUpdated$.subscribe(async (updated) => {
+      if (updated) {
+        this.people = await this.panchangService.getPeopleNakshatras();
+        this.getTarabalam();
+      }
+    });
     this.getTarabalam();
   }
 
@@ -108,6 +120,7 @@ export class PanchangamPage implements OnInit {
   }
 
   getTarabalam(): void {
+    this.tarabalam = [];
     this.people.forEach((person) => {
       const tara = this.panchangService.getTarabalam(
         this.panchanga.nakshatra.name,
@@ -121,9 +134,9 @@ export class PanchangamPage implements OnInit {
     });
   }
 
-  onDateChange(event: any): void {
+  async onDateChange(event: any) {
     this.date = event.detail.value;
-    this.getPanchanga();
+    await this.init();
   }
 
   toggleCalendar() {
@@ -133,7 +146,6 @@ export class PanchangamPage implements OnInit {
   savePerson() {
     if (!this.newPerson.name || !this.newPerson.nakshatra) return;
     this.panchangService.savePerson(this.newPerson).then((x) => {
-      console.log('Saved:', x);
       this.newPerson = { name: '', nakshatra: '' };
     });
   }

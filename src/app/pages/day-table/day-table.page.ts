@@ -31,6 +31,7 @@ import { HttpClient } from '@angular/common/http';
 import { Helper } from 'src/app/utils/helper';
 import { LocationService } from 'src/app/services/location/location.service';
 import { SunriseService } from 'src/app/services/sunrise/sunrise.service';
+import { GeodataService } from 'src/app/services/geodata/geodata.service';
 
 @Component({
   selector: 'app-day-table',
@@ -77,6 +78,7 @@ export class DayTablePage implements OnInit {
     private ashtaService: AshtaSiddhantaService,
     private locationService: LocationService,
     private sunriseService: SunriseService,
+    private geodataService: GeodataService,
     private http: HttpClient
   ) {}
 
@@ -93,6 +95,22 @@ export class DayTablePage implements OnInit {
       }
     });
     await this.loadCities();
+
+
+    this.locationService.locationUpdated$.subscribe(async (location) => {
+      if (location) {
+        const nearest = await this.geodataService.nearest(location.lat, location.lng);
+        if(nearest) {
+          this.selectedLocation = this.cities.find((city) => city.name === nearest.name);
+          if (this.selectedLocation) {
+            this.selectedDate = new Date().toISOString();
+            await this.loadDailySegments(new Date(this.selectedDate), location.lat, location.lng);
+          } else {
+            console.error('No matching city found for nearest location');
+          }
+        }
+      }
+    });
   }
 
   async loadCities() {

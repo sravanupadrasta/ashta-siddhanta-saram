@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   IonHeader,
@@ -25,21 +25,21 @@ import {
   IonItemOption,
   IonCol,
   IonGrid,
-  IonIcon,
-} from '@ionic/angular/standalone';
-import { filter } from 'rxjs';
+  IonIcon, IonFooter } from '@ionic/angular/standalone';
+import { BehaviorSubject, filter } from 'rxjs';
 import { DBService, PersonProfile } from 'src/app/services/db/db.service';
 import { GeodataService } from 'src/app/services/geodata/geodata.service';
 import { LocationService } from 'src/app/services/location/location.service';
 import { NakshatraService } from 'src/app/services/nakshatra/nakshatra.service';
 import { NotificationService } from 'src/app/services/notification/notification.service';
+import { ProfileService } from 'src/app/services/profile/profile.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
   standalone: true,
-  imports: [
+  imports: [IonFooter, 
     IonIcon,
     IonGrid,
     IonCol,
@@ -50,9 +50,9 @@ import { NotificationService } from 'src/app/services/notification/notification.
     IonList,
     IonText,
     IonButton,
-    IonInput,
     IonLabel,
     IonItem,
+    IonInput,
     IonCardContent,
     IonCardTitle,
     IonCardHeader,
@@ -77,6 +77,7 @@ export class ProfilePage implements OnInit {
   nearestLocation: string = 'Unknown';
   showAddForm = false;
   locationGranted = false;
+  version: string = '1.1.9';
 
   constructor(
     private dbService: DBService,
@@ -84,7 +85,8 @@ export class ProfilePage implements OnInit {
     private locationService: LocationService,
     private notificationService: NotificationService,
     private toastController: ToastController,
-    private geoDataService: GeodataService
+    private geoDataService: GeodataService,
+    private profileService: ProfileService
   ) {}
 
   async ngOnInit() {
@@ -126,12 +128,9 @@ export class ProfilePage implements OnInit {
       }
     });
 
-    this.dbService.getAllProfiles().then((profiles) => {
+    this.profileService.getAllProfiles().then((profiles) => {
       this.profiles = profiles;
     });
-
-    // subscribe to geo data service with the updated location and find the nearest location
-    // subscribe to locationString in location service and update the location and find the nearest location
   }
 
   toggleAddForm() {
@@ -146,7 +145,6 @@ export class ProfilePage implements OnInit {
   }
 
   async savePerson() {
-
     if (!this.data.name || !this.data.nakshatra) {
       const toast = await this.toastController.create({
         message: 'Please fill all fields',
@@ -157,22 +155,30 @@ export class ProfilePage implements OnInit {
       return;
     }
 
-    await this.dbService.addProfile(this.data);
-    const toast = await this.toastController.create({
-      message: 'Profile added successfully!',
-      duration: 2000,
-      color: 'success',
+    this.profileService.addProfile(this.data).then(async () => {
+      const toast = await this.toastController.create({
+        message: 'Profile added successfully!',
+        duration: 2000,
+        color: 'success',
+      });
+      await toast.present();
+      this.profiles.push(this.data);
+  
+      this.resetForm();
+      this.showAddForm = false;
+    }).catch(async (error) => {
+      console.error('Error adding profile:', error);
+      const toast = await this.toastController.create({
+        message: 'Error adding profile',
+        duration: 2000,
+        color: 'danger',
+      });
+      await toast.present();
     });
-
-    await toast.present();
-    this.profiles.push(this.data);
-
-    this.resetForm();
-    this.showAddForm = false;
   }
 
   async deletePerson(index: number, personId: number) {
-    await this.dbService.removeProfile(personId);
+    await this.profileService.removeProfile(personId);
     this.profiles.splice(index, 1);
     const toast = await this.toastController.create({
       message: 'Profile removed successfully!',

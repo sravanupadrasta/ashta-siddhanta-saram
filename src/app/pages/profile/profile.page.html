@@ -156,7 +156,7 @@
     <ion-card-content>
       <ion-item fill="solid">
         <ion-label position="stacked">Name</ion-label>
-        <ion-input [(ngModel)]="data.name" placeholder="e.g. Rama"></ion-input>
+        <ion-input [(ngModel)]="data.name"></ion-input>
       </ion-item>
 
       <ion-item fill="solid">
@@ -173,4 +173,12 @@
       </ion-button>
     </ion-card-content>
   </ion-card>
+  <ion-footer>
+    <!--display version-->
+    <ion-toolbar color="light">
+      <ion-text class="ion-text-center" color="medium">
+        <p>Version {{ version }}</p>
+      </ion-text>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>

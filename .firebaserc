@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "ashta-siddhanta-saram"
-  }
+  },
+  "targets": {
+    "ashta-siddhanta-saram": {
+      "hosting": {
+        "ashta-siddhanta-saram": [
+          "ashta-siddhanta-saram"
+        ],
+        "panchangam": [
+          "panchangam"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

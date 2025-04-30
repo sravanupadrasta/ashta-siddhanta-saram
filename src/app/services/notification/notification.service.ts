@@ -34,7 +34,6 @@ export class NotificationService {
         return null;
       }
 
-      console.log('FCM token:', token);
       if (token) {
         const userLocation = await this.locationService.getLocation();
         await this.fcmTokenService.saveToken(token, userLocation, Intl.DateTimeFormat().resolvedOptions().timeZone);

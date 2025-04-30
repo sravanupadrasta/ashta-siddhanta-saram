@@ -90,7 +90,6 @@ export class PanchangaComponent  implements OnInit {
   savePerson() {
     if (!this.newPerson.name || !this.newPerson.nakshatra) return;
     this.panchangService.savePerson(this.newPerson).then((x) => {
-      console.log('Saved:', x);
       this.newPerson = { name: '', nakshatra: '' };
     });
   }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DBService, LocationRecord } from '../db/db.service';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Helper } from 'src/app/utils/helper';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ export class LocationService {
   lat: number = 0;
   lng: number = 0;
   locationFetchedAt: Date | null = null;
+  private locationUpdatedSubject = new BehaviorSubject<LocationRecord | null>(null);
+  locationUpdated$ = this.locationUpdatedSubject.asObservable();
 
   constructor(private dbService: DBService) { }
 
@@ -17,11 +20,12 @@ export class LocationService {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         async (pos) => {
-          const lat = pos.coords.latitude;
-          const lng = pos.coords.longitude;
-          await this.dbService.saveLocation(lat, lng);
-          this.locationString = `Lat: ${lat.toFixed(4)}, Lng: ${lng.toFixed(4)}`;
+          this.lat = pos.coords.latitude;
+          this.lng = pos.coords.longitude;
+          await this.dbService.saveLocation(this.lat, this.lng);
+          this.locationString = `Lat: ${this.lat.toFixed(4)}, Lng: ${this.lng.toFixed(4)}`;
           this.locationFetchedAt = new Date();
+          this.locationUpdatedSubject.next({ lat: this.lat, lng: this.lng, fetchedAt: this.locationFetchedAt.toString() });
           successCallback();
         },
         async (err) => {
@@ -41,6 +45,7 @@ export class LocationService {
       this.lng = location.lng;
       this.locationFetchedAt = new Date(location.fetchedAt);
       this.locationString = `Lat: ${this.lat.toFixed(4)}, Lng: ${this.lng.toFixed(4)}`;
+      this.locationUpdatedSubject.next({ lat: this.lat, lng: this.lng, fetchedAt: this.locationFetchedAt.toString() });
     }
     return location;
   }

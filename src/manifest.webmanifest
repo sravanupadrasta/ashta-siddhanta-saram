@@ -1,11 +1,11 @@
 {
-  "name": "Ashta Siddhanta Saram",
-  "short_name": "AshtaSiddhantaSaram",
+  "name": "Panchangam",
+  "short_name": "Panchangam",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
-  "scope": "https://ashta-siddhanta-saram.web.app/",
-  "start_url": "https://ashta-siddhanta-saram.web.app/",
+  "scope": "https://panchangam.web.app/",
+  "start_url": "https://panchangam.web.app/",
   "icons": [
     {
       "src": "assets/icons/icon-a-192x192.png",
