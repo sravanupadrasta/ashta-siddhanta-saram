@@ -1,17 +1,118 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>Dashboard</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" color="medium" (click)="logout()">
+        <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        Logout
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="dashboard-content">
+  <ng-container *ngIf="(currentUser$ | async) as user">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Dashboard</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+    <section class="welcome">
+      <h2>Welcome back, {{ user.name }}!</h2>
+      <p>
+        Track the progress of accessibility surveys conducted across your region. These metrics help the
+        health administration to prioritise rehabilitation programmes for Divyang citizens.
+      </p>
+    </section>
+
+    <section class="metric-grid" *ngIf="(metrics$ | async) as metrics">
+      <ion-card *ngFor="let metric of metrics; trackBy: trackByMetric">
+        <ion-card-header>
+          <ion-card-subtitle>{{ metric.label }}</ion-card-subtitle>
+          <ion-card-title>{{ metric.value | number: '1.0-0' }} {{ metric.suffix }}</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </section>
+
+    <section class="district-overview" *ngIf="user.role === 'admin'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>District rollout overview</ion-card-title>
+          <ion-card-subtitle>Select a district to drill down into survey status.</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>District</ion-label>
+            <ion-select
+              interface="popover"
+              [(ngModel)]="selectedDistrictId"
+              (ionChange)="onDistrictChange($event.detail.value)"
+            >
+              <ion-select-option *ngFor="let district of (districts$ | async)" [value]="district.id">
+                {{ district.name }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ng-container *ngIf="(districtDashboard$ | async) as dashboard">
+            <div class="district-summary" *ngIf="dashboard.district as district">
+              <div>
+                <h3>{{ district.name }}</h3>
+                <p>
+                  Population: {{ district.population | number }} &bull; Villages: {{ district.villages | number }} &bull;
+                  Houses: {{ district.houses | number }}
+                </p>
+              </div>
+              <div class="tags">
+                <ion-chip color="primary">PHCs: {{ dashboard.phcs.length }}</ion-chip>
+                <ion-chip color="success">Surveys: {{ dashboard.totalSurveys }}</ion-chip>
+                <ion-chip color="warning">Houses with Divyang: {{ dashboard.housesWithDivyang }}</ion-chip>
+                <ion-chip color="tertiary">Divyang identified: {{ dashboard.totalDivyang }}</ion-chip>
+              </div>
+            </div>
+
+            <ion-list *ngIf="dashboard.phcs.length">
+              <ion-list-header color="light">Primary Health Centres</ion-list-header>
+              <ion-item *ngFor="let phc of dashboard.phcs">
+                <ion-label>
+                  <h3>{{ phc.name }}</h3>
+                  <p>
+                    {{ phc.address }} &bull; Estimated houses: {{ phc.estimatedHouses | number }} &bull; Population:
+                    {{ phc.estimatedPopulation | number }}
+                  </p>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </ng-container>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section class="recent-surveys" *ngIf="(recentSurveys$ | async) as surveys">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Latest survey submissions</ion-card-title>
+          <ion-card-subtitle>Click a record in the My Surveys tab to view the full questionnaire.</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let survey of surveys; trackBy: trackBySurvey">
+              <ion-label>
+                <h3>{{ survey.personName }} &mdash; {{ resolveVillageName(survey.villageId) }}</h3>
+                <p>
+                  {{ resolvePhcName(survey.phcId) }} &bull; {{ survey.surveyDate | date: 'mediumDate' }} &bull; Ward
+                  {{ survey.wardNo }}
+                </p>
+              </ion-label>
+              <ion-note slot="end">Household {{ survey.householdId }}</ion-note>
+            </ion-item>
+            <ion-item *ngIf="surveys.length === 0">
+              <ion-label>No surveys available yet. Start recording data from the New Survey tab.</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+    </section>
+  </ng-container>
 </ion-content>

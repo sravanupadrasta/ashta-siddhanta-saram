@@ -1,0 +1,132 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Team Directory</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="team-content">
+  <ng-container *ngIf="(currentUser$ | async) as user">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Team Directory</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <section *ngIf="user.role === 'admin'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Supervisors by PHC</ion-card-title>
+          <ion-card-subtitle>Drill into each record to view their contact information and team performance.</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-accordion-group>
+            <ion-accordion *ngFor="let supervisor of (supervisorSummaries$ | async); trackBy: trackBySupervisor">
+              <ion-item slot="header">
+                <ion-label>
+                  <h3>{{ supervisor.profile.name }}</h3>
+                  <p>
+                    {{ supervisor.phc?.name || 'No PHC assigned' }} &bull; Surveys: {{ supervisor.surveyCount }} &bull; Divyang:
+                    {{ supervisor.divyang }}
+                  </p>
+                </ion-label>
+              </ion-item>
+              <div class="accordion-details" slot="content">
+                <ion-list>
+                  <ion-item lines="none">
+                    <ion-label>
+                      <p>ID: {{ supervisor.profile.id }}</p>
+                      <p>Email: {{ supervisor.profile.email }}</p>
+                      <p>Phone: {{ supervisor.profile.phone }}</p>
+                      <p>Address: {{ supervisor.profile.address }}</p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-list-header color="light">Surveyors reporting to this supervisor</ion-list-header>
+                  <ion-item *ngFor="let surveyor of supervisor.surveyors; trackBy: trackBySurveyor">
+                    <ion-label>
+                      <h4>{{ surveyor.profile.name }}</h4>
+                      <p>
+                        {{ surveyor.profile.email }} &bull; Phone: {{ surveyor.profile.phone }} &bull; Surveys:
+                        {{ surveyor.surveyCount }} &bull; Divyang: {{ surveyor.divyang }}
+                      </p>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item *ngIf="supervisor.surveyors.length === 0">
+                    <ion-label>No surveyors have been mapped yet.</ion-label>
+                  </ion-item>
+                </ion-list>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section *ngIf="user.role === 'supervisor'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Your surveyors</ion-card-title>
+          <ion-card-subtitle>Monitor field activity and onboard new enumerators instantly.</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ng-container *ngIf="(supervisorSurveyors$ | async) as surveyors">
+            <ion-list>
+              <ion-item *ngFor="let surveyor of surveyors; trackBy: trackBySurveyor">
+                <ion-label>
+                  <h3>{{ surveyor.profile.name }}</h3>
+                  <p>
+                    {{ surveyor.profile.email }} &bull; Phone: {{ surveyor.profile.phone }}
+                  </p>
+                </ion-label>
+                <ion-chip color="success" slot="end">Surveys: {{ surveyor.surveyCount }}</ion-chip>
+                <ion-chip color="tertiary" slot="end">Divyang: {{ surveyor.divyang }}</ion-chip>
+              </ion-item>
+              <ion-item *ngIf="surveyors.length === 0">
+                <ion-label>No surveyors assigned yet.</ion-label>
+              </ion-item>
+            </ion-list>
+          </ng-container>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Add a new surveyor</ion-card-title>
+          <ion-card-subtitle>The system will generate a temporary password and email login ID for the surveyor.</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <form [formGroup]="newSurveyorForm" (ngSubmit)="addSurveyor()">
+            <ion-item fill="outline">
+              <ion-label position="floating">Name</ion-label>
+              <ion-input formControlName="name"></ion-input>
+            </ion-item>
+            <ion-item fill="outline">
+              <ion-label position="floating">Address</ion-label>
+              <ion-input formControlName="address"></ion-input>
+            </ion-item>
+            <ion-item fill="outline">
+              <ion-label position="floating">Phone</ion-label>
+              <ion-input formControlName="phone"></ion-input>
+            </ion-item>
+            <ion-item fill="outline">
+              <ion-label position="floating">Email</ion-label>
+              <ion-input formControlName="email"></ion-input>
+            </ion-item>
+            <ion-button expand="block" class="ion-margin-top" type="submit">Create surveyor</ion-button>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section *ngIf="user.role === 'surveyor'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Access restricted</ion-card-title>
+          <ion-card-subtitle>This directory is only available to supervisors and administrators.</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Reach out to your supervisor for any team-related updates.
+        </ion-card-content>
+      </ion-card>
+    </section>
+  </ng-container>
+</ion-content>

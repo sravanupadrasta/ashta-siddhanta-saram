@@ -1,0 +1,29 @@
+.admin-panel {
+  --padding-bottom: 3rem;
+}
+
+.hint,
+.form-grid,
+.user-onboarding {
+  padding: 0 1.25rem 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 900px) {
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+ion-card {
+  margin: 0;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}

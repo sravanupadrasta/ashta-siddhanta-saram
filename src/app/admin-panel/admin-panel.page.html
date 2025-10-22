@@ -1,0 +1,210 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Admin Panel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="admin-panel">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Admin Panel</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <section class="hint">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Roll-out configuration</ion-card-title>
+        <ion-card-subtitle>
+          Define the geographic scope and onboard Primary Health Centres before assigning supervisors and surveyors.
+        </ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+  </section>
+
+  <section class="form-grid">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Add state</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="stateForm" (ngSubmit)="addState()">
+          <ion-item fill="outline">
+            <ion-label position="floating">State name</ion-label>
+            <ion-input formControlName="name"></ion-input>
+          </ion-item>
+          <ion-button expand="block" class="ion-margin-top" type="submit">Add state</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Add district</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="districtForm" (ngSubmit)="addDistrict()">
+          <ion-item fill="outline">
+            <ion-label position="floating">State</ion-label>
+            <ion-select formControlName="stateId">
+              <ion-select-option *ngFor="let state of (states$ | async)" [value]="state.id">
+                {{ state.name }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">District name</ion-label>
+            <ion-input formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">Population</ion-label>
+            <ion-input type="number" formControlName="population"></ion-input>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">Villages</ion-label>
+            <ion-input type="number" formControlName="villages"></ion-input>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">Houses</ion-label>
+            <ion-input type="number" formControlName="houses"></ion-input>
+          </ion-item>
+          <ion-button expand="block" class="ion-margin-top" type="submit">Add district</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Add Primary Health Centre</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="phcForm" (ngSubmit)="addPhc()">
+          <ion-item fill="outline">
+            <ion-label position="floating">State</ion-label>
+            <ion-select formControlName="stateId">
+              <ion-select-option *ngFor="let state of (states$ | async)" [value]="state.id">
+                {{ state.name }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">District</ion-label>
+            <ion-select formControlName="districtId">
+              <ion-select-option *ngFor="let district of (districts$ | async)" [value]="district.id">
+                {{ district.name }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">PHC name</ion-label>
+            <ion-input formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">Address</ion-label>
+            <ion-input formControlName="address"></ion-input>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">Estimated houses</ion-label>
+            <ion-input type="number" formControlName="estimatedHouses"></ion-input>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">Estimated population</ion-label>
+            <ion-input type="number" formControlName="estimatedPopulation"></ion-input>
+          </ion-item>
+          <ion-button expand="block" class="ion-margin-top" type="submit">Add PHC</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Add village</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="villageForm" (ngSubmit)="addVillage()">
+          <ion-item fill="outline">
+            <ion-label position="floating">State</ion-label>
+            <ion-select formControlName="stateId">
+              <ion-select-option *ngFor="let state of (states$ | async)" [value]="state.id">
+                {{ state.name }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">District</ion-label>
+            <ion-select formControlName="districtId">
+              <ion-select-option *ngFor="let district of (districts$ | async)" [value]="district.id">
+                {{ district.name }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">PHC</ion-label>
+            <ion-select formControlName="phcId">
+              <ion-select-option *ngFor="let phc of (phcs$ | async)" [value]="phc.id">
+                {{ phc.name }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">Village name</ion-label>
+            <ion-input formControlName="name"></ion-input>
+          </ion-item>
+          <ion-button expand="block" class="ion-margin-top" type="submit">Add village</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </section>
+
+  <section class="user-onboarding">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Onboard supervisors and surveyors</ion-card-title>
+        <ion-card-subtitle>New users receive an auto-generated password to access the SEED survey console.</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="userForm" (ngSubmit)="createUser()">
+          <ion-segment formControlName="role" value="supervisor" class="ion-margin-bottom">
+            <ion-segment-button value="supervisor">Supervisor</ion-segment-button>
+            <ion-segment-button value="surveyor">Surveyor</ion-segment-button>
+          </ion-segment>
+
+          <ion-item fill="outline">
+            <ion-label position="floating">Name</ion-label>
+            <ion-input formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">Address</ion-label>
+            <ion-input formControlName="address"></ion-input>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">Phone number</ion-label>
+            <ion-input formControlName="phone"></ion-input>
+          </ion-item>
+          <ion-item fill="outline">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email"></ion-input>
+          </ion-item>
+
+          <ion-item fill="outline" *ngIf="userForm.value.role === 'supervisor'">
+            <ion-label position="floating">Assign PHC</ion-label>
+            <ion-select formControlName="phcId">
+              <ion-select-option *ngFor="let phc of (phcs$ | async)" [value]="phc.id">{{ phc.name }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item fill="outline" *ngIf="userForm.value.role === 'surveyor'">
+            <ion-label position="floating">Reporting supervisor</ion-label>
+            <ion-select formControlName="supervisorId">
+              <ion-select-option *ngFor="let supervisor of supervisors" [value]="supervisor.id">
+                {{ supervisor.name }} ({{ supervisor.email }})
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-button expand="block" class="ion-margin-top" type="submit">Create user</ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </section>
+</ion-content>
