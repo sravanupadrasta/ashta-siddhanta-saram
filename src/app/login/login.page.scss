@@ -1,0 +1,23 @@
+.login-content {
+  --background: var(--ion-color-light-shade);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1.5rem;
+  gap: 1.5rem;
+}
+
+.branding {
+  text-align: center;
+  max-width: 420px;
+  color: var(--ion-color-medium-shade);
+}
+
+ion-card {
+  width: min(460px, 100%);
+}
+
+ion-button[fill='clear'] {
+  margin-top: 0.75rem;
+}

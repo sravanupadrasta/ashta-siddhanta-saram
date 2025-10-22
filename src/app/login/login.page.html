@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true" class="login-content">
+  <div class="branding">
+    <h1>SEED Survey Console</h1>
+    <p>Empowering district teams to understand Divyang households across India.</p>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ isPasswordReset ? 'Reset password' : 'Sign in' }}</ion-card-title>
+      <ion-card-subtitle>
+        {{
+          isPasswordReset
+            ? 'Enter the registered email to generate a fresh password.'
+            : 'Use the credentials shared with you by the admin team.'
+        }}
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form *ngIf="!isPasswordReset" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <ion-item fill="outline">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+          Enter a valid email address
+        </ion-note>
+
+        <ion-item fill="outline">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+          Password must contain at least 6 characters
+        </ion-note>
+
+        <ion-button expand="block" class="ion-margin-top" type="submit">Login</ion-button>
+      </form>
+
+      <form *ngIf="isPasswordReset" [formGroup]="forgotForm" (ngSubmit)="onForgotPassword()">
+        <ion-item fill="outline">
+          <ion-label position="floating">Registered email address</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-note color="danger" *ngIf="forgotForm.controls.email.invalid && forgotForm.controls.email.touched">
+          Enter the email address shared during onboarding
+        </ion-note>
+        <ion-button expand="block" class="ion-margin-top" type="submit">Generate password</ion-button>
+      </form>
+
+      <ion-button fill="clear" size="small" (click)="toggleMode()">
+        {{ isPasswordReset ? 'Back to login' : 'Forgot password?' }}
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,17 +1,134 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title>My Surveys</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="surveys-content">
+  <ng-container *ngIf="(currentUser$ | async) as user">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">My Surveys</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <section class="filters" *ngIf="user.role === 'admin'">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Filter by deployment region</ion-card-title>
+          <ion-card-subtitle>Select a district and optionally drill down to a specific PHC.</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-item>
+            <ion-label>District</ion-label>
+            <ion-select [(ngModel)]="selectedDistrictId" (ionChange)="onDistrictChange($event.detail.value)">
+              <ion-select-option *ngFor="let district of (districts$ | async)" [value]="district.id">
+                {{ district.name }}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Primary health centre</ion-label>
+            <ion-select [(ngModel)]="selectedPhcId" (ionChange)="onPhcChange($event.detail.value)">
+              <ion-select-option value="all">All PHCs</ion-select-option>
+              <ng-container *ngIf="(phcs$ | async) as phcs">
+                <ng-container *ngFor="let phc of phcs">
+                  <ion-select-option
+                    *ngIf="!selectedDistrictId || phc.districtId === selectedDistrictId"
+                    [value]="phc.id"
+                  >
+                    {{ phc.name }}
+                  </ion-select-option>
+                </ng-container>
+              </ng-container>
+            </ion-select>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section class="filters" *ngIf="user.role === 'supervisor' && user.phcId">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Supervising PHC</ion-card-title>
+          <ion-card-subtitle>{{ resolvePhcName(user.phcId) }}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </section>
+
+    <section class="summary" *ngIf="(summary$ | async) as summary">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Survey progress</ion-card-title>
+          <ion-card-subtitle>
+            <ng-container [ngSwitch]="user.role">
+              <span *ngSwitchCase="'admin'">{{ resolveDistrictName(selectedDistrictId) }}</span>
+              <span *ngSwitchCase="'supervisor'">{{ resolvePhcName(user.phcId ?? '') }}</span>
+              <span *ngSwitchDefault>Personal coverage</span>
+            </ng-container>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="summary-grid">
+            <div>
+              <h4>Houses surveyed</h4>
+              <p>{{ summary.housesSurveyed | number }}</p>
+            </div>
+            <div>
+              <h4>Houses pending</h4>
+              <p>{{ summary.housesPending | number }}</p>
+            </div>
+            <div>
+              <h4>Divyang identified</h4>
+              <p>{{ summary.divyangTotal | number }}</p>
+            </div>
+            <div>
+              <h4>Surveys completed today</h4>
+              <p>{{ summary.surveysToday | number }}</p>
+            </div>
+          </div>
+          <ion-progress-bar [value]="summary.progress" color="success"></ion-progress-bar>
+          <p class="progress-label">
+            {{ (summary.progress * 100) | number: '1.0-0' }}% of {{ summary.housesTarget | number }} targeted houses covered
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </section>
+
+    <section class="survey-list" *ngIf="(filteredSurveys$ | async) as surveys">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Divyang households</ion-card-title>
+          <ion-card-subtitle>
+            Click to inspect the captured questionnaire details. Listing includes houses with one or more Divyang members.
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          <ng-container *ngIf="surveysWithDivyang(surveys) as divyangSurveys">
+            <ion-list>
+              <ion-item
+                button
+                detail
+                *ngFor="let survey of divyangSurveys; trackBy: trackBySurvey"
+                (click)="openSurveyDetail(survey)"
+              >
+                <ion-label>
+                  <h3>{{ survey.personName }} &mdash; {{ resolveVillageName(survey.villageId) }}</h3>
+                  <p>
+                    {{ resolvePhcName(survey.phcId) }} &bull; {{ survey.surveyDate | date: 'mediumDate' }} &bull; Ward
+                    {{ survey.wardNo }}
+                  </p>
+                </ion-label>
+                <ion-chip color="tertiary" slot="end">Divyang: {{ survey.divyangCount }}</ion-chip>
+              </ion-item>
+              <ion-item *ngIf="divyangSurveys.length === 0">
+                <ion-label>No Divyang households found for the current filter.</ion-label>
+              </ion-item>
+            </ion-list>
+          </ng-container>
+        </ion-card-content>
+      </ion-card>
+    </section>
+  </ng-container>
 </ion-content>

@@ -1,0 +1,45 @@
+.dashboard-content {
+  --padding-bottom: 2rem;
+}
+
+.welcome {
+  padding: 1.5rem 1.25rem 0.5rem;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 0 1.25rem 1rem;
+}
+
+.metric-grid ion-card {
+  margin: 0;
+}
+
+.district-overview,
+.recent-surveys {
+  padding: 0 1.25rem;
+}
+
+.district-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.district-summary .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+ion-list-header {
+  font-weight: 600;
+}
+
+ion-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+}
